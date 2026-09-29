@@ -153,7 +153,10 @@ public class WebController {
                 hasil.append("<span style='color:#dc3545;'>Nilai a tidak boleh 0 (bukan persamaan kuadrat).</span>");
             } else {
                 double D = (b * b) - (4 * a * c);
+                double xp = -b / (2 * a);
+                double yp = -D / (4 * a);
                 hasil.append(String.format("<strong>Determinan (D):</strong> %.2f<br>", D));
+                hasil.append(String.format("<strong>Titik Puncak (Xp, Yp):</strong> (%.2f, %.2f) <em>[Fitur v2]</em><br>", xp, yp));
                 if (D > 0) {
                     double x1 = (-b + Math.sqrt(D)) / (2 * a);
                     double x2 = (-b - Math.sqrt(D)) / (2 * a);
